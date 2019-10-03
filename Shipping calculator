@@ -1,0 +1,76 @@
+/*----------------------------------------------------------------------------------*/
+/* Name: Yenny Fernando-Davidson                                                    */
+/* Class: ENGR-2304-003 Fall 2019                                                   */
+/* Assignment #: Week 3 Shipping Calculator                                         */
+/* Due Date: 14 SEP 19                                                              */
+/*                                                                                  */
+/* Description of program here: Shipping Calculator                                 */
+/* Calculate how much it would cost to ship 3 packages                              */
+/* Pseudocode:                                                                      */
+/* 1. Print out a welcome message                                                   */
+/* 2. Ask user to enter weight for each of the three packages and save each one     */
+/*    to a different variable.                                                      */
+/* 3. Add the weights of the three packages.                                        */
+/* 4. Print out the total weight of the packages.                                   */
+/* 5. Determine the shipping rate based on the total weight of the packages.        */
+/* 6. Print the shipping rate and total cost of user's shipment.                    */
+
+// Preprocessor directives
+#include <iostream>  //Required for cout
+#include <iomanip>   //Required for setprecision 
+
+// Using directive
+using namespace std;
+
+// Main function
+int main()
+{ 
+	float package1, package2, package3;
+	float result = 0; 
+	float shipRate= 0; 
+    
+	cout << "Welcome to my Shipping Calculator! " << endl; 
+	
+	cout << "Please enter weight in pounds for package 1: "; 
+	cin >>	package1; 
+	
+	cout << "Please enter weight in pounds for package 2: ";
+	cin >> package2; 
+	
+	cout << "Please enter weight in pounds for package 3: ";
+	cin >> package3;
+	
+	// calculate the total weight of the three packages
+	result = package1 + package2 + package3; 
+	
+	cout << fixed << setprecision (2);
+	cout << "The total weight is " << result << " pounds." << endl; 
+	
+	// Determining Shipping cost 
+	if (result < 10) {
+		cout << "Your shipping rate is $3.00 per pound." << endl;
+		
+		// calculate shipping cost 
+		shipRate = result * 3.00; 	
+		
+	} else if (result >= 10 && result <= 20) {
+		cout << "Your shipping rate is $2.50 per pound." << endl; 
+		
+		// calculate shipping cost
+	    shipRate = result * 2.50; 		
+		
+	} else if (result > 20) {
+		cout << "Your shipping rate is $1.75 per pound." << endl; 
+		
+		// calculate shipping cost 
+		shipRate = result * 1.75;		
+				
+	}
+	    
+	// Print out cost of shipment 
+	cout << "The cost of your shipment is $" << shipRate << endl;
+
+  	// Exit program
+  	return 0;
+}
+/*-----------------------------------------------------------------------------------*/
