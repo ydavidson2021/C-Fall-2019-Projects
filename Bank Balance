@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------*/
+/* Name: Yenny Davidson                                             */
+/* Class: ENGR-2304-003 Fall 2019                                   */
+/* Assignment #: PA3- Bank Balance                                  */
+/* Due Date: 21SEP19                                                */
+/*                                                                  */
+/* Program to display user's bank transactions.                     */
+/*                                                    */
+
+// Preprocessor directives
+#include <iostream>  //Required for cout
+#include <iomanip> // set precision
+
+// Using directive
+using namespace std;
+
+// Main function
+int main()
+{
+
+	float startBalance; 
+	float posNumber = 0; 
+	float negNumber = 0; 
+	float transaction; 
+	float transCount = 0;
+	float totalBalance = 0; 
+
+	cout << "---------------- Welcome to Your Bank Account! -------------" << endl; 
+	cout << "Please enter your starting balance:  "; 
+	cin >> startBalance; 
+	
+	cout << "Got it. Now enter each of your transactions." << endl; 
+	cout << "Positive number = deposit; Negative number = withdrawal; 0 to stop." << endl; 
+	
+	cout << "Enter your transaction: "; 
+	cin >> transaction; 
+	
+	if (transaction > 0) {
+	    posNumber += transaction;
+	    } else if (transaction < 0) {
+	    negNumber += transaction;
+	}
+	while (transaction !=0){
+		transCount ++; 
+		
+	    cout << "Enter your transaction: "; 
+	    cin >> transaction;
+	    
+	    if (transaction > 0) {
+	    posNumber += transaction;
+	    } else if (transaction < 0) {
+	    negNumber += transaction;
+	    }
+	}
+	cout << endl; 
+	cout << "Here is a summary of your account transactions:" << endl; 
+	    
+    // calculate deposits
+	cout << fixed << setprecision(2);
+	cout << "Total deposits: $" << posNumber << endl;  
+	    
+	// calculate withdrawals
+	cout << "Total withdrawals: $"<< negNumber << endl; 
+	
+	// calculate final balance 
+    totalBalance = startBalance + posNumber + negNumber; 
+    cout <<"Final balance is: $" << totalBalance << endl; 
+    
+    //notify user balance is negative 
+    if (totalBalance < 0) {
+     cout << "Please note that your final balance is NEGATIVE!" << endl; 
+    } 
+  
+  	// Exit program
+  	return 0;
+}
+/*----------------------------------------------------*/
