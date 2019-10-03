@@ -1,0 +1,56 @@
+/*---------------------------------------------------------------------------------*/
+/* Name: Yenny Davidson                                                            */
+/* Class: ENGR-2304-003 Fall 2019                                                  */
+/* Assignment #: Module 2 PA1- Cylinder Volume                                     */
+/*                                                                                 */
+/* Calculating Volume of a cylinder using radius and height                        */
+/*                                                                                 */
+/* Pseudocode:                                                                     */
+/* 1. Print a welcome message to user.                                             */
+/* 2. Designate 3.14 as the constant value of PI.                                  */
+/* 3. Prompt the user to enter radius in cm and save it to a variable.             */
+/* 4. Prompt the user to enter height in cm and save it to a variable.             */
+/* 5. Calculate volume using the formula V=PI * r* r* h and save it to a variable. */
+/* 6. Print out the calculated volume in cubic cm showing two decimal places.      */
+/* 7. Exit the program.                                                            */
+
+// Preprocessor directives
+#include <iostream>  //Required for cout
+#include <iomanip>   // Required for manipulators
+
+
+// Using directive
+using namespace std;
+
+// Main function
+int main()
+{
+    // variable declarations
+	double radius_cm = 0; 
+	double height_cm = 0;
+	double volume_cubic_cm = 0; 
+	const double PI = 3.14;
+	
+	
+	//introduction 
+	cout << "Welcome to the cylinder volume calculator" << "!\n"; 
+	
+	//get input from user 
+	cout << "Please enter the radius in cm: "; 
+	cin >> radius_cm; 
+	cout << "Please enter the height in cm: ";
+	cin >> height_cm;
+	
+	 // calculate volume of the cylinder
+    volume_cubic_cm = PI * radius_cm * radius_cm * height_cm;
+	
+	
+	//Print the result for the user 
+	cout << fixed << setprecision(2);
+	cout << "The volume of this cylinder is " << volume_cubic_cm <<  " cubic cm " << endl;
+
+  // Exit program
+  return 0;
+}
+
+/*----------------------------------------------------*/
